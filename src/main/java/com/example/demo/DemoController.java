@@ -24,8 +24,8 @@ public class DemoController {
     public DemoForm createDemoForm(){
         DemoForm demoForm = new DemoForm();
         //名前・性別の初期値を設定する
-        demoForm.setName("テスト　名前");
-        demoForm.setSex("1");
+        demoForm.setName("");
+        demoForm.setRezi("1");
         return demoForm;
     }
  

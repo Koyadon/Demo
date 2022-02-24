@@ -7,15 +7,21 @@
 <body>
 　　 <p>入力内容を確認し、問題なければ「送信」ボタンを押下してください。</p>
 <form method="post" th:action="@{/send}" th:object="${demoForm}">
-    <p th:text="'名前： ' + *{name}">ここに名前が表示されます</p>
-    <p th:text="'生年月日： ' + *{birthYear} + '年'
+	<p th:text="'ご注文内容 のり弁当:' + *{nori} + '個'">ここにのり弁当の個数が表示されます</p>
+	<p th:text="'ご注文内容 からあげ弁当:' + *{kara} + '個'">ここにからあげ弁当の個数が表示されます</p>
+	<p th:text="'ご注文内容 幕ノ内弁当:' + *{maku} + '個'">ここに幕ノ内弁当の個数が表示されます</p>
+    <p th:text="'名前： ' + *{name}">ここにお客様の名前が表示されます</p>
+    <p th:text="'お受け取り日時： ' + *{birthYear} + '年'
                      + *{getMonthItems().get('__*{birthMonth}__')} + '月'
-                     + *{getDayItems().get('__*{birthDay}__')} + '日'">
-        ここに生年月日が表示されます
+                     + *{getDayItems().get('__*{birthDay}__')} + '日'
+                     + *{getHourItems().get('__*{hour}__')} + '時'
+                     + *{getMinutesItems().get('__*{hour}__')} + '分'">
+        ここにお受け取り日時が表示されます
     </p>
-    <p th:text="'性別： ' + *{getSexItems().get('__*{sex}__')}">
-        ここに性別が表示されます
+    <p th:text="'レジ袋： ' + *{getReziItems().get('__*{rezi}__')}">
+        ここにレジ袋の有無が表示されます
     </p>
+    <p th:text="'メールアドレス： ' + *{email}">ここにメールアドレスが表示されます</p>
     <p th:text="'確認チェック： ' + *{checked}">
         ここに確認チェック内容が表示されます
     </p>
